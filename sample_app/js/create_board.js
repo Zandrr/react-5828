@@ -1,6 +1,6 @@
 var React = require('react');
 
-var CreateBoard = React.createClass({
+var Sample = React.createClass({
 
 	render: function() {
 		return (
@@ -10,4 +10,4 @@ var CreateBoard = React.createClass({
 	}
 });
 
-module.exports = CreateBoard;
+module.exports = Sample;

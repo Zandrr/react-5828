@@ -1,4 +1,4 @@
 var React = require('react');
-var Test = require('./create_board');
+var Sample = require('./create_board');
 
-React.render(<Test />, document.querySelector('#app'));
+React.render(<Sample />, document.querySelector('#app'));
