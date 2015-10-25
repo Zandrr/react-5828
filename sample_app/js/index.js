@@ -1,4 +1,4 @@
 var React = require('react');
-var Sample = require('./create_board');
+var TodoList = require('./todo_list');
 
-React.render(<Sample />, document.querySelector('#app'));
+React.render(<TodoList />, document.querySelector('#app'));
