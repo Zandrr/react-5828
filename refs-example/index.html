@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Refs Example</title>
+	<script src="http://fb.me/react-0.12.2.js"></script>
+	<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+</head>
+<body>
+	<script type="text/jsx">
+
+		var App = React.createClass({
+			getInitialState: function(){
+				return{
+					one: '',
+					two: '',
+					three: ''
+				}
+			},
+			update: function(){
+				this.setState({
+					one:this.refs.one.refs.inpu.getDOMNode().value,
+					two:this.refs.two.refs.inpu.getDOMNode().value,
+					three:this.refs.three.refs.inpu.getDOMNode().value
+				});
+			},
+			render: function(){
+				return(
+					<div> 
+					<InputBox ref="one" update={this.update} />
+					<label>{this.state.one}</label>
+					<InputBox ref="two" update={this.update} />
+					<label>{this.state.two}</label>
+					<InputBox ref="three" update={this.update} />
+					<label>{this.state.three}</label>
+					</div>
+				);
+			}
+		});
+
+		var InputBox = React.createClass({
+			render: function(){
+				return(
+					<div>
+						<input type="text" ref="inpu" onChange={this.props.update} />
+					</div>
+				);
+			}
+		});
+
+		React.render(<App />, document.body);
+
+
+	</script>
+
+</body>
+</html>
